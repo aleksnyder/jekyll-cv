@@ -1,0 +1,31 @@
+# Site settings
+# These are used to personalize your resume. If you look in the HTML files,
+# you will see them accessed via {{ site.name }}, {{ site.introduction }}, and so on.
+# Edit and replace as needed.
+title: John Doe | Resume
+name: John Doe
+email: john.doe@domain.com
+phone: 123-456-7890
+portfolio: https://www.johndoe.com
+description: > 
+  Hi! My name is John Doe and this is my online resume.
+  Here you can look at my past work experience, education,
+   and my hobbies. 
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+behance_username: johndoe
+codepen_username: johndoe
+twitter_username: jekyllrb
+github_username:  jekyll
+
+introduction: >
+  <p>Experienced Web Developer seeking opportunity to bring
+   knowledge of programming, design, and media to a position
+    with ABC Company.</p>
+
+# Build settings
+markdown: kramdown
+theme: jekyll-cv-theme
+exclude:
+  - Gemfile
+  - Gemfile.lock

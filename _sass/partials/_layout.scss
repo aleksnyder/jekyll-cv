@@ -1,0 +1,141 @@
+/**
+ * Utility classes
+ */
+.wrapper {
+  max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+  max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $spacing-unit;
+  padding-left: $spacing-unit;
+  @extend %clearfix;
+
+  @include bp(laptop) {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+    padding-right: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+  }
+}
+
+.screen-reader-text {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  text-indent: -9999px;
+}
+
+/**
+ * Site header
+ */
+.header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: em(300px);
+  background-color: $header-color;
+  border-bottom: 1px solid #e53935;
+}
+
+.header__name {
+  color: #fff;
+  padding: 2em 0 0;
+  text-align: center;
+}
+
+.header__social {
+  max-width: em(225px);
+  margin: 0 auto;
+  li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 0 1.5em;
+  }
+  a {
+    -webkit-transition: fill .3s cubic-bezier(.455,.03,.515,.955);
+    transition: fill .3s cubic-bezier(.455,.03,.515,.955);
+    padding: 0 .5em;
+    fill: #fff;
+    &:hover {
+      fill: $icon-hover-color;
+    }
+  }
+}
+
+/**
+ * Site body
+ */
+.content {
+  position: relative;
+  top: em(200px);
+  left: 0;
+  right: 0;
+}
+.inner {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+  z-index: 0;
+}
+.inner > article {
+  color: $page-color; 
+  text-align: justify;
+  @include bp(mobile) {
+    padding: em(30px);
+  }
+  @include bp(tablet) {
+    padding: em(60px);
+  }
+}
+
+/**
+ * Resume sections
+ */
+.section {
+  padding-bottom: 1em;
+}
+
+.section__title {
+  color: $header-color;
+}
+
+/**
+ * Site footer
+ */
+.message {
+  text-align: center;
+  padding: 2em 0;
+}
+
+@media print {
+  .inner {
+    box-shadow: none;
+  }
+
+  .header {
+    position: relative;
+    border: none;
+    height: 100px;
+  }
+
+  .header__name {
+    color: $header-color;
+  }
+
+  .header__social {
+    display: none;
+  }
+
+  .content {
+    top: 0;
+  }
+
+  .message {
+    display: none;
+  }
+}

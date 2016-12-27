@@ -1,0 +1,7 @@
+schools:
+  - name: University of Maryland
+    location: College Park, MD
+    years: 2010-2014
+    degrees:
+      - B.S. Computer Science
+      - Minor in History

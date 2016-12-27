@@ -1,0 +1,81 @@
+// Define defaults for each variable.
+
+$heading-font-family: 'Roboto', sans-serif;
+$base-font-family: 'Open Sans', sans-serif;
+$base-font-size:   16px !default;
+$base-font-weight: 400 !default;
+$small-font-size:  $base-font-size * 0.875 !default;
+$base-line-height: 1.5 !default;
+
+$spacing-unit:     2em !default;
+
+$text-color:       #111 !default;
+$background-color: #eee;
+$link-color:      #2a7ae2 !default;
+$header-color:     #F44336;
+$page-color:       #757575;
+$icon-hover-color: darken($header-color, 40%);
+
+$grey-color:       #828282 !default;
+$grey-color-light: lighten($grey-color, 40%) !default;
+$grey-color-dark:  darken($grey-color, 25%) !default;
+
+// Width of the content area
+$content-width:    75em !default;
+$mobile:          48em !default;
+$laptop:        75em !default;
+
+// Use media queries like this:
+// @include bp(mobile) {
+//   background: blue
+// }
+@mixin bp($point) {
+
+  $bp-laptop: "(min-width: 75em)";
+  $bp-tablet: "(min-width: 48em)";
+  $bp-mobile: "(min-width: 20em)";
+
+  @if $point == mobile {
+    @media #{$bp-mobile} { @content; }
+  }
+  @else if $point == tablet {
+    @media #{$bp-tablet} { @content; }
+  }
+  @else if $point == laptop {
+    @media #{$bp-laptop} { @content; }
+  }
+
+}
+
+// Convert from pixels to em
+// @param {integer} $px - Number of pixels to be converted.
+// @param {integer} $base-font-size - Default value for 1em in browser.
+// 
+// Usage: em(12px);
+
+@function em($px, $base-font-size: 16px) {
+  @if (unitless($px)) {
+      @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
+      @return px2em($px + 0px); // That may fail.
+  } @else if (unit($px) == em) {
+      @return $px;
+  }
+  @return ($px / $base-font-size) * 1em;
+}
+
+
+/**
+ * Clearfix
+ */
+%clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+// Import partials.
+@import
+  "partials/base",
+  "partials/layout",
+  "partials/syntax-highlighting"
+;

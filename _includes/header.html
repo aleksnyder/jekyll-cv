@@ -1,0 +1,62 @@
+<header class="header" role="banner">
+
+  <div class="wrapper">
+
+    <h1 class="header__name">{{ site.name | escape }}</a></h1>
+
+    <ul class="header__social">
+      {% if site.behance_username %}
+      <li>
+        <a href="https://www.behance.net/aleksnyder" target="_blank">
+          <svg class="icon-behance" width="25" viewBox="0 0 100 100">
+            <use xlink:href="#icon-behance" />
+          </svg>
+          <span class="screen-reader-text">Behance</span>
+        </a>
+      </li>
+      {% endif %}
+      {% if site.twitter_username %}
+      <li>
+        <a href="https://twitter.com/aleksnyder" target="_blank">
+          <svg class="icon-twitter" width="25" viewBox="0 0 100 100">
+            <use xlink:href="#icon-twitter" />
+          </svg>
+          <span class="screen-reader-text">Twitter</span>
+        </a>
+      </li>
+      {% endif %}
+      {% if site.codepen_username %}
+      <li>
+        <a href="http://codepen.io/pixelpusher89/" target="_blank">
+          <svg class="icon-codepen" width="25" viewBox="0 0 100 100">
+            <use xlink:href="#icon-codepen" />
+          </svg>
+          <span class="screen-reader-text">Codepen</span>
+        </a>
+      </li>
+      {% endif %}
+      {% if site.github_username %}
+      <li>
+        <a href="https://github.com/aleksnyder" target="_blank">
+          <svg class="icon-github" width="25" viewBox="0 0 100 100">
+            <use xlink:href="#icon-github" />
+          </svg>
+          <span class="screen-reader-text">Github</span>
+        </a>
+      </li>
+      {% endif %}
+      {% if site.email %}
+      <li>
+        <a href="mailto:asnyder0816@gmail.com">
+          <svg class="icon-mail" width="25" viewBox="0 0 100 100">
+            <use xlink:href="#icon-mail" />
+          </svg>
+          <span class="screen-reader-text">Email</span>
+        </a>
+      </li>
+      {% endif %}
+    </ul>
+
+  </div>
+
+</header>

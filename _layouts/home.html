@@ -1,0 +1,70 @@
+---
+layout: default
+---
+
+<div class="wrapper">
+  <section class="inner">
+    <article class="resume">
+      {% if site.introduction %}
+      <section class="section">
+        <h2 class="section__title"><span>Objective</span></h2>
+        {{ site.introduction }}
+      </section>
+      {% endif %}
+
+      <section class="section">
+        <h2 class="section__title"><span>Professional Strengths</span></h2>
+        <ul>
+        {% for skill in site.data.professional-strengths.skills %}
+          <li>{{ skill.name }}</li>
+        {% endfor %}
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="section__title"><span>Work Experience</span></h2>
+
+        {% for job in site.data.work-experience.jobs %}
+          <p><strong>{{ job.title }} - {{ job.place }}</strong> ({{ job.years }})<br />
+          {{ job.description}}</p>
+
+          <ul>
+            {% for work-item in job.work-items %}
+            <li>{{ work-item }}</li>
+            {% endfor %}
+          </ul>
+        {% endfor %}
+      </section>
+
+      <section class="section">
+        <h2 class="section__title"><span>Education</span></h2>
+
+        {% for school in site.data.education.schools %}
+          <p><strong>{{ school.name }}</strong>, {{ school.location }} - ({{ school.years }})</p>
+          <ul>
+            {% for degree in school.degrees %}
+            <li>{{ degree }}</li>
+            {% endfor %}
+          </ul>
+        {% endfor %}
+      </section>
+
+      <section class="section">
+        <h2 class="section__title"><span>References</span></h2>
+
+        {% for reference in site.data.references.myreferences %}
+          <p><strong>{{ reference.name }}</strong>, {{ reference.title }}<br />
+{{ reference.company }},  {{ reference.location }},  <a href="tel:{{ reference.phone }}">{{ reference.phone }}</a></p>
+        {% endfor %}
+      </section>
+      
+    </article>
+  </section>
+
+  {% if site.phone %}
+  <section class="message">
+    <p>You can reach me on weekday after 5pm at <a href="tel:{{ site.phone }}">{{ site.phone }}</a>.</p>
+  </section>
+  {% endif %}
+
+</div>
