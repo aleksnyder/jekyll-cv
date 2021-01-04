@@ -5,11 +5,11 @@
 .header {
   position: relative;
   border: none;
-  height: 100px;
+  height: 175px;
 }
 
 .header__name {
-  color: $header-color;
+  color: #fff;
 }
 
 .header__social {
