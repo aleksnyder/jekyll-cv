@@ -1,0 +1,21 @@
+// Use media queries like this:
+// @include bp(mobile) {
+//   background: blue
+// }
+@mixin bp($point) {
+
+  $bp-laptop: "(min-width: 75em)";
+  $bp-tablet: "(min-width: 48em)";
+  $bp-mobile: "(min-width: 20em)";
+
+  @if $point == mobile {
+    @media #{$bp-mobile} { @content; }
+  }
+  @else if $point == tablet {
+    @media #{$bp-tablet} { @content; }
+  }
+  @else if $point == laptop {
+    @media #{$bp-laptop} { @content; }
+  }
+
+}

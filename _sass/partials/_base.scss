@@ -75,12 +75,15 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 1px;
 }
 
+h2 {
+  margin: 0.75em 0 0.5em;
+}
+
 /**
  * Links
  */
 a {
   color: $brand-color;
-  text-decoration: none;
 
   &:visited {
     color: darken($brand-color, 15%);
@@ -88,7 +91,7 @@ a {
 
   &:hover {
     color: $text-color;
-    text-decoration: underline;
+    text-decoration: none;
   }
 }
 
@@ -113,7 +116,7 @@ blockquote {
  */
 pre,
 code {
-  font-size: 15px;
+  font-size: 1rem;
   border: 1px solid $grey-color-light;
   border-radius: 3px;
   background-color: #eef;
@@ -124,7 +127,7 @@ code {
 }
 
 pre {
-  padding: 8px 12px;
+  padding: 0.5rem 0.75rem;
   overflow-x: auto;
 
   > code {
@@ -133,4 +136,3 @@ pre {
     padding-left: 0;
   }
 }
-

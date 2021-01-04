@@ -1,0 +1,25 @@
+.inner {
+  box-shadow: none;
+}
+
+.header {
+  position: relative;
+  border: none;
+  height: 100px;
+}
+
+.header__name {
+  color: $header-color;
+}
+
+.header__social {
+  display: none;
+}
+
+.content {
+  top: 0;
+}
+
+.message {
+  display: none;
+}
